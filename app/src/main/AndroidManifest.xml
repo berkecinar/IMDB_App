@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IMDBApplication">
         <activity
+            android:name=".Activities.SearchResultListActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.MainActivity"
             android:exported="true">
             <intent-filter>

@@ -2,11 +2,12 @@ package com.example.imdbapplication.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import com.example.imdbapplication.R;
 
-public class SearchResultListActivity extends AppCompatActivity {
+public class SearchResultListActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
