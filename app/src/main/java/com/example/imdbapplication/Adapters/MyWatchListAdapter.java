@@ -36,8 +36,8 @@ public class MyWatchListAdapter extends RecyclerView.Adapter<MyWatchListAdapter.
     public void onBindViewHolder(MyWatchListAdapter.ViewHolder holder, final int position) {
         Result result = myWatchList.get(position);
 
-        holder.my_watch_list_title_textview.setText(result.getTitle());
-        holder.my_watch_list_description_textview.setText(result.getDescription());
+        holder.my_watch_list_title_textview.setText(result.getImage());
+        holder.my_watch_list_description_textview.setText(result.getTitle());
 
 
 
