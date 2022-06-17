@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class DB extends SQLiteOpenHelper
 {
-    private final static String databaseName = "PersonDB";
+    private final static String databaseName = "WatchListDB";
     private final static int databaseVersion = 1;
     private String WATCH_LIST_TABLE = "watchList";
     private static DB dbInstance = null;

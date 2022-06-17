@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IMDBApplication">
         <activity
+            android:name=".Activities.MyWatchListActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.SearchResultListActivity"
             android:exported="false" />
         <activity

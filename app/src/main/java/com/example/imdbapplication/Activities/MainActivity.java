@@ -19,6 +19,8 @@ public class MainActivity extends Activity {
     private EditText search_content_edit_text;
     private Button search_content_button;
 
+    private Button show_watch_list_button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,15 +44,17 @@ public class MainActivity extends Activity {
             }
         });
 
+        show_watch_list_button = findViewById(R.id.show_watch_list_button);
+        show_watch_list_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavigateMyWatchListActivty();
+            }
+        });
+
     }
 
-    private void NavigateSearchResultListActivty()
-    {
-        Intent searchResultListIntent = new Intent(MainActivity.this, SearchResultListActivity.class);
-        searchResultListIntent.putExtra("searchKey", searchContentName);
-        startActivity(searchResultListIntent);
 
-    }
 
     private void SaveSearchContentNameToLocalDataSource(String searchContentName)
     {
@@ -70,5 +74,19 @@ public class MainActivity extends Activity {
         result = preferences.getString(CONST_DATA, "");
 
         return result;
+    }
+
+    private void NavigateSearchResultListActivty()
+    {
+        Intent searchResultListIntent = new Intent(MainActivity.this, SearchResultListActivity.class);
+        searchResultListIntent.putExtra("searchKey", searchContentName);
+        startActivity(searchResultListIntent);
+
+    }
+
+    private void NavigateMyWatchListActivty()
+    {
+        Intent myWatchListIntent = new Intent(MainActivity.this, MyWatchListActivity.class);
+        startActivity(myWatchListIntent);
     }
 }

@@ -10,12 +10,14 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import com.example.imdbapplication.Adapters.SearchResultAdapter;
+import com.example.imdbapplication.DB.DB;
 import com.example.imdbapplication.Entity.Result;
 import com.example.imdbapplication.Entity.SearchResult;
 import com.example.imdbapplication.R;
 import com.google.gson.Gson;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.Call;
@@ -88,6 +90,8 @@ public class SearchResultListActivity extends Activity {
 
     private void SetAdapterRecyclerView(List<Result> resultList)
     {
+        //ArrayList<Result> watchList =  DB.getInstance(this).GetWatchList();
+
         SearchResultAdapter adapter = new SearchResultAdapter(resultList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         search_result_recyclerview.setLayoutManager(mLayoutManager);
