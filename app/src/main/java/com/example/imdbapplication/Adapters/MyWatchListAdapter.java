@@ -1,5 +1,6 @@
 package com.example.imdbapplication.Adapters;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,8 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.example.imdbapplication.Activities.MyWatchListActivity;
 import com.example.imdbapplication.Entity.Result;
 import com.example.imdbapplication.R;
 
@@ -38,6 +41,12 @@ public class MyWatchListAdapter extends RecyclerView.Adapter<MyWatchListAdapter.
 
         holder.my_watch_list_title_textview.setText(result.getImage());
         holder.my_watch_list_description_textview.setText(result.getTitle());
+
+        String imageUrl = result.getDescription();
+        Glide.with(holder.itemView)
+                .load(imageUrl)
+                .into(holder.my_watch_list_image_image_view);
+
 
 
 

@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.bumptech.glide.Glide;
 import com.example.imdbapplication.DB.DB;
 import com.example.imdbapplication.Entity.Result;
 import com.example.imdbapplication.R;
@@ -37,6 +38,12 @@ public class SearchResultAdapter extends RecyclerView.Adapter<SearchResultAdapte
 
         holder.search_result_title_textview.setText(result.getTitle());
         holder.search_result_description_textview.setText(result.getDescription());
+
+        String imageUrl = result.getImage();
+        Glide.with(holder.itemView)
+                .load(imageUrl)
+                .into(holder.search_result_image_view);
+
 
         holder.add_wishlist_button.setOnClickListener(new View.OnClickListener() {
             @Override
