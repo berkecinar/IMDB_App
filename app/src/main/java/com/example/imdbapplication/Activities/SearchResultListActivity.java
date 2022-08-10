@@ -28,6 +28,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
+
 public class SearchResultListActivity extends Activity {
 
     private RecyclerView search_result_recyclerview;
@@ -84,6 +85,29 @@ public class SearchResultListActivity extends Activity {
                         SetAdapterRecyclerView(searchResult.getResults());
                     }
                 });
+            }
+        });
+    }
+
+    private void deneme()
+    {
+        OkHttpClient client = new OkHttpClient().newBuilder()
+                .build();
+        MediaType mediaType = MediaType.parse("text/plain");
+        RequestBody body = RequestBody.create(mediaType, "");
+        Request request = new Request.Builder()
+                .url("https://imdb-api.com/en/API/SearchMovie/k_ewamc78o/inception%202010")
+                .method("GET", body)
+                .build();
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(@NonNull Call call, @NonNull IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+
             }
         });
     }
